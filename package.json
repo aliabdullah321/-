@@ -1,0 +1,49 @@
+{
+  "name": "primecare-emr-lan",
+  "version": "2.0.0",
+  "description": "A client-server Electronic Medical Record (EMR) application for a small primary health care center, designed for multi-user LAN environments.",
+  "main": "main.js",
+  "scripts": {
+    "build": "esbuild src/index.tsx --bundle --outfile=dist/bundle.js --platform=browser --jsx=automatic",
+    "start:server": "node server/server.js",
+    "start:app": "electron .",
+    "start": "npm run build && concurrently \"npm:start:server\" \"npm:start:app\"",
+    "dist": "npm run build && electron-builder"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "recharts": "^3.3.0",
+    "sqlite3": "^5.1.7",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^28.2.0",
+    "electron-builder": "^24.9.1",
+    "esbuild": "^0.20.2"
+  },
+  "build": {
+    "appId": "com.primecare.emr.desktop.lan",
+    "productName": "PrimeCare EMR (LAN)",
+    "files": [
+      "dist/",
+      "server/",
+      "main.js",
+      "index.html",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>المركز الصحي بمدينة تدريب الأمن العام بالقصيم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: '#67e8f9',
+                DEFAULT: '#06b6d4',
+                dark: '#0e7490',
+              },
+              secondary: {
+                light: '#f3e8ff',
+                DEFAULT: '#a855f7',
+                dark: '#7e22ce',
+              },
+            },
+            keyframes: {
+              'fade-in-out': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '10%': { opacity: '1', transform: 'translateY(0)' },
+                '90%': { opacity: '1', transform: 'translateY(0)' },
+                '100%': { opacity: '0', transform: 'translateY(20px)' },
+              }
+            },
+            animation: {
+              'fade-in-out': 'fade-in-out 5s forwards',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      #print-area {
+        display: none;
+      }
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        #print-area, #print-area * {
+          visibility: visible;
+        }
+        #print-area {
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+        .no-print {
+          display: none;
+        }
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.3.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script src="./dist/bundle.js"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

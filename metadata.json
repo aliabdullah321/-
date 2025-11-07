@@ -1,0 +1,5 @@
+
+{
+  "name": "PrimeCare EMR",
+  "description": "A simple Electronic Medical Record (EMR) application for a small primary health care center. It allows managing patient files, vitals, diagnoses, and prescriptions. Includes CBAHI/MOH compliance features like a full audit trail and standardized SOAP notes."
+}
